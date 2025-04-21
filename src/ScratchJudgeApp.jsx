@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import * as Blockly from "blockly"; // ✅ Use main Blockly package
-import { javascriptGenerator } from "blockly/javascript"; // ✅ Still fine
+import * as Blockly from "blockly";
+import { javascriptGenerator } from "blockly/javascript";
 
 const problem = {
     title: "হ্যালো বলো",
