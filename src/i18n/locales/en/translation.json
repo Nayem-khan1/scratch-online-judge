@@ -1,0 +1,30 @@
+{
+    "navbar": {
+      "problems": "Problems"
+    },
+    "problem_list_title": "🧠 Problem List",
+    "not_found": "❌ Problem not found!",
+    "problems": {
+      "1": {
+        "title": "Add Two Numbers",
+        "description": "Add two numbers and print the result."
+      },
+      "2": {
+        "title": "Find Maximum Number",
+        "description": "Print the larger of two numbers."
+      },
+      "3": {
+        "title": "Reverse a List",
+        "description": "Reverse a list and print it."
+      }
+    },
+    "home": {
+      "tagline": "Solve coding challenges visually. Learn, Practice, and Master with blocks!",
+      "explore": "Explore Problems",
+      "login_title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "login_btn": "Login"
+    }
+  }
+  

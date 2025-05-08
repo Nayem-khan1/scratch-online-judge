@@ -1,6 +1,83 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+    --color-primary-light: #6366F1;
+    --color-primary-dark: #818CF8;
+    --color-secondary-light: #F97316;
+    --color-secondary-dark: #FDBA74;
+    --color-accent-light: #22C55E;
+    --color-accent-dark: #4ADE80;
+    --color-background-light: #FEF9F4;
+    --color-background-dark: #1E1B26;
+    --color-card-light: #FFF7ED;
+    --color-card-dark: #2C2737;
+    --color-text-light: #1E293B;
+    --color-text-dark: #F1F5F9;
+    --color-yellow-DEFAULT: #FACC15;
+    --color-yellow-dark: #EAB308;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply transition-colors duration-300;
+  }
+  body {
+    @apply bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark;
+  }
+
+  .card {
+    @apply bg-card-light dark:bg-card-dark shadow-md rounded-2xl p-4 transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-yellow-DEFAULT text-white font-bold rounded-xl px-4 py-2 hover:bg-yellow-dark;
+  }
+
+  .navbar {
+    @apply bg-white dark:bg-background-dark text-primary-light dark:text-primary-dark;
+  }
+
+  .problem-list {
+    @apply bg-background-light dark:bg-background-dark rounded-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-orange-500 text-white font-bold rounded-xl px-4 py-2 hover:bg-orange-600;
+  }
+  
+  .btn-glow {
+    @apply bg-yellow-400 text-white font-bold rounded-xl px-4 py-2 shadow-[0_0_15px_rgba(250,204,21,0.5)] hover:bg-yellow-500;
+  }
+
+  .gradient-border-card {
+    @apply p-[2px] rounded-2xl bg-gradient-to-r from-indigo-600 via-green-400 to-orange-500;
+  }
+
+  .inner-card {
+    @apply bg-card-light dark:bg-card-dark p-4 rounded-2xl;
+  }
+
+  .playground-bg {
+    @apply bg-background-light dark:bg-background-dark rounded-xl p-4 shadow-inner;
+  }
+
+  .text-title {
+    @apply text-2xl sm:text-3xl font-bold text-primary-light dark:text-primary-dark;
+  }
+
+  .text-subtitle {
+    @apply text-base sm:text-lg font-medium text-text-light dark:text-text-dark;
+  }
+
+  .card-hover {
+    @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  }
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -107,13 +184,4 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 }

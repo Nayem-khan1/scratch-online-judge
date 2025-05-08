@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const problems = ["1", "2", "3"];
 
-export default function ProblemListPage() {
+export default function Problem() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
